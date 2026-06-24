@@ -77,16 +77,18 @@ resetSleep();
 
 function pet(){
 
+const cat = document.getElementById("cat");
+
 cat.animate([
-    { transform:"scale(1,1)" },
-    { transform:"scale(1.18,0.82)" },
-    { transform:"scale(0.90,1.10)" },
-    { transform:"scale(1.05,0.95)" },
-    { transform:"scale(0.98,1.02)" },
-    { transform:"scale(1,1)" }
-],{
-    duration:350,
-    easing:"cubic-bezier(.34,1.56,.64,1)"
+    { transform: "scale(1,1)" },
+    { transform: "scale(1.35,0.65)" },
+    { transform: "scale(0.82,1.18)" },
+    { transform: "scale(1.12,0.90)" },
+    { transform: "scale(0.96,1.04)" },
+    { transform: "scale(1,1)" }
+], {
+    duration: 420,
+    easing: "cubic-bezier(.18,1.25,.32,1)"
 });
 
     if(sleeping){
