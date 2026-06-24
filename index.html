@@ -77,6 +77,18 @@ resetSleep();
 
 function pet(){
 
+cat.animate([
+    { transform:"scale(1,1)" },
+    { transform:"scale(1.18,0.82)" },
+    { transform:"scale(0.90,1.10)" },
+    { transform:"scale(1.05,0.95)" },
+    { transform:"scale(0.98,1.02)" },
+    { transform:"scale(1,1)" }
+],{
+    duration:350,
+    easing:"cubic-bezier(.34,1.56,.64,1)"
+});
+
     if(sleeping){
 
         document.getElementById("text").innerText = "にゃっ！";
