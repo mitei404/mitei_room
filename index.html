@@ -34,7 +34,8 @@ img{
 <h1>みていのおへや</h1>
 
 <img
-src="https://placekitten.com/300/300"
+id="cat"
+src="cat.png"
 onclick="pet()"
 >
 
@@ -58,12 +59,65 @@ const words = [
 "Yummy"
 ];
 
+let sleeping = false;
+let sleepTimer;
+
+function resetSleep() {
+    clearTimeout(sleepTimer);
+
+    sleeping = false;
+
+    sleepTimer = setTimeout(() => {
+        sleeping = true;
+        document.getElementById("text").innerText = "…💤";
+    }, 10000);
+}
+
+resetSleep();
+
 function pet(){
-    document.getElementById("text").innerText =
+
+    if(sleeping){
+
+        document.getElementById("text").innerText = "にゃっ！";
+
+        sleeping = false;
+
+        resetSleep();
+
+        return;
+
+    }
+
+    const text =
     words[Math.floor(Math.random()*words.length)];
+
+    document.getElementById("text").innerText = text;
+
+    resetSleep();
+
+    const click = document.getElementById("click");
+    const meow = document.getElementById("meow");
+
+    if(Math.floor(Math.random()*20)===0){
+
+        meow.currentTime = 0;
+        meow.play();
+
+    }else{
+
+        click.currentTime = 0;
+        click.play();
+
+    }
+
 }
 
 </script>
 
 </body>
 </html>
+
+<audio id="click" src="カーソル移動7.mp3"></audio>
+
+<audio id="meow" src="猫の鳴き声1.mp3"></audio>
